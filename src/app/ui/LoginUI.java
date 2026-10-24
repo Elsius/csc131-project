@@ -1,9 +1,12 @@
-import javax.swing.*;
+package ui;
+
 import java.awt.*;
+import javax.swing.*;
+import ui.DashboardUI;
 
 public class LoginUI{
    public LoginUI(){
-     
+
       //Creating Objects
       JFrame frame = new JFrame("Health Data Application Login");
       JLabel userlabel = new JLabel("Username:");
@@ -18,14 +21,14 @@ public class LoginUI{
          frame.dispose();
          new DashboardUI();
       });
-      
+
       //Panel Settings
       panel.add(userlabel);
       panel.add(usertext);
       panel.add(passlabel);
       panel.add(passtext);
       panel.add(button);
-     
+
       //Frame Settings
       frame.add(panel); //Add panel to frame
       frame.setSize(500, 300);
@@ -33,6 +36,6 @@ public class LoginUI{
       frame.setLocationRelativeTo(null); //Page pops up center of screen
       frame.setResizable(false);
       frame.setVisible(true);
-      
+
    }
 }
