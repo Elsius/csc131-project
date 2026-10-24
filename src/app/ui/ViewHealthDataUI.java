@@ -5,8 +5,8 @@ import javax.swing.*;
 import exercise.Exercise;
 import user.Patient;
 
-public class ViewHealthRecordUI{
-   public ViewHealthRecordUI(){
+public class ViewHealthDataUI{
+   public ViewHealthDataUI(){
 
       JFrame frame = new JFrame("Health Record");
       JPanel panel = new JPanel();
