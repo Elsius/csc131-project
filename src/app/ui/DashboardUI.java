@@ -15,6 +15,11 @@ public class DashboardUI{
       JButton logoutButton = new JButton("Logout");
       JPanel panel = new JPanel();
 
+		// The logout button will exit the application.
+		logoutButton.addActionListener(e -> {
+			System.exit(0);
+		});
+
       //Panel Settings
       panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
       panel.add(welcomelabel);
