@@ -12,6 +12,12 @@ public class LoginUI{
       JTextField passtext = new JTextField(15);
       JButton button = new JButton("Login");
       JPanel panel = new JPanel();
+
+      //Button Function
+      button.addActionListener(e -> {
+         frame.dispose();
+         new DashboardUI();
+      });
       
       //Panel Settings
       panel.add(userlabel);
