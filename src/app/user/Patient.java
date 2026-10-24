@@ -9,6 +9,30 @@ public class Patient extends User{
         super(username,password);
     }
     
+    public void setName(String input){
+        name = input;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+    
+    public String getName(){
+        return name;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
     public void retrievePatientInfo(){
         // get info from backend and set name, height, weight
     }
