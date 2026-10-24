@@ -2,6 +2,7 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import ui.ViewHealthDataUI;
 
 public class DashboardUI{
    public DashboardUI(){
@@ -20,11 +21,11 @@ public class DashboardUI{
 			System.exit(0);
 		});
 
-	   //View record button opens health records ui
-      viewRecordButton.addActionListener(e -> {
-         frame.dispose();
-         new ViewHealthRecordUI();
-      });
+		// View record button opens health records UI.
+		viewRecordButton.addActionListener(e -> {
+			frame.dispose();
+			new ViewHealthDataUI();
+		});
 
       //Panel Settings
       panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
