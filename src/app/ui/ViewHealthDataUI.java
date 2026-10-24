@@ -61,11 +61,16 @@ public class ViewHealthDataUI{
       durationLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
       exerciseWeightLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 
-     //Frame Settings
-      frame.add(panel);
-      frame.setSize(500, 300);
-      frame.setLocationRelativeTo(null);
-      frame.setResizable(false);
-      frame.setVisible(true);   
+		// Frame settings
+		frame.add(panel);
+		frame.setSize(500, 300);
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
+
+		// For now, closing the frame will exit the application.
+		// This needs to go back to the dashboard instead.
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		frame.setVisible(true);
    }
 }
