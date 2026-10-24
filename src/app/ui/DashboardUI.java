@@ -20,6 +20,12 @@ public class DashboardUI{
 			System.exit(0);
 		});
 
+	   //View record button opens health records ui
+      viewRecordButton.addActionListener(e -> {
+         frame.dispose();
+         new ViewHealthRecordUI();
+      });
+
       //Panel Settings
       panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
       panel.add(welcomelabel);
