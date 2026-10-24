@@ -6,12 +6,13 @@ Our project is to create a health data application that tracks and calculates us
 
 Architecture Diagram
 
-.      |||||||||||Prepare Suggestions     Cloud Backup
-       |               ^                      ^      |
-       V               |                      |      V
-Application UI||||||>Patient Info|||||||> Local Storage
-              |                            ^
-              ||||||> Log In |||||||||||||||
+
+       |||||||||||Prepare Suggestions         Cloud Backup
+       |                  ^                      ^      |
+       V                  |                      |      V
+    Application UI||||||>Patient Info|||||||> Local Storage
+              |                                ^
+              ||||||||||> Log In |||||||||||||||
 
 # Development tools
 - Java
