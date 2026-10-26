@@ -6,13 +6,8 @@ Our project is to create a health data application that tracks and calculates us
 
 Architecture Diagram
 
+<img width="654" height="770" alt="image" src="https://github.com/user-attachments/assets/86b86715-1ad6-416d-8930-50f0f07a3fc9" />
 
-       |||||||||||Prepare Suggestions         Cloud Backup
-       |                  ^                      ^      |
-       V                  |                      |      V
-    Application UI||||||>Patient Info|||||||> Local Storage
-              |                                ^
-              ||||||||||> Log In |||||||||||||||
 
 # Development tools
 - Java
