@@ -1,3 +1,10 @@
+/*
+ * Main
+ *
+ * 2026-11-05
+ *
+ * Authors: Elsius, kcompsci9, xalisha
+ */
 import ui.LoginUI;
 
 public class Main {
