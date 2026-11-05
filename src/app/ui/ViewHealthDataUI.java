@@ -1,3 +1,10 @@
+/*
+ * ViewHealthDataUI
+ *
+ * 2026-11-05
+ *
+ * Authors: kcompsci9, xalisha
+ */
 package ui;
 
 import java.awt.*;
