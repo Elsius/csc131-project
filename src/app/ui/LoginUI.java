@@ -1,3 +1,10 @@
+/*
+ * LoginUI
+ *
+ * 2026-11-05
+ *
+ * Authors: kcompsci9, TyDiCicco, xalisha
+ */
 package ui;
 
 import java.awt.*;
