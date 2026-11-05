@@ -1,3 +1,10 @@
+/*
+ * Exercise
+ *
+ * 2026-11-05
+ *
+ * Authors: Elsius, kcompsci9
+ */
 package exercise;
 
 public class Exercise {
