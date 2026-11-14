@@ -13,6 +13,7 @@ public class ExerciseHistory {
     }
     public void getHistory(){
         // pull info from backend to populate Exercise list
+        // use databasehandler to fetch then process results
     }
     
 }
