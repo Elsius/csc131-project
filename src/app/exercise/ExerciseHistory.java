@@ -2,7 +2,7 @@
 * ExerciseHistory
 * Holds a list of exercises for a particular date for the front end to display
 * Last updated: 11/15/2026
-* Authors: Elsius
+* Authors: Elsius, kcompsci9
 * 11/15/2026 update: getHistory function implementation. Fetches and processes into "exercises" list
 */
 
@@ -13,7 +13,7 @@ import java.sql.*;
 import java.util.*;
 
 public class ExerciseHistory {
-    private int year;
+    private long year;
     private int month;
     private List<Exercise> exercises = new ArrayList<>(); // a list of exercises
 
@@ -32,24 +32,24 @@ public class ExerciseHistory {
         // attempt to connect to db and prepare sql
         String query = "SELECT * FROM Exercise WHERE ExerciseListID = ? AND year = ? AND month = ?";
         try (
-                Connection dbConnection = databaseHandler.connect();
-                PreparedStatement pstatement = dbConnection.prepareStatement(query);) {
-            pstatement.setInt(1, ExerciseListID);
-            pstatement.setInt(2, this.year);
-            pstatement.setInt(3, this.month);
+                Connection databaseConnection = databaseHandler.connect();
+                PreparedStatement preparedStatement = databaseConnection.prepareStatement(query);) {
+            preparedStatement.setInt(1, ExerciseListID);
+            preparedStatement.setLong(2, this.year);
+            preparedStatement.setInt(3, this.month);
 
             // attempt to query
-            try (ResultSet result = pstatement.executeQuery()) {
+            try (ResultSet result = preparedStatement.executeQuery()) {
                 // if query successful, update exercise list
                 exercises = new ArrayList<>();
 
                 // loops through results, constructs an Exercise object, adds to "exercises"
                 // list
                 while (result.next()) {
-                    String rName = result.getString("Name");
-                    double rDuration = Double.parseDouble(result.getString("Duration"));
-                    int rWeight = 0; // placeholder for weight
-                    Exercise newEntry = new Exercise(rName, rDuration, rWeight);
+                    String resultName = result.getString("Name");
+                    double resultDuration = Double.parseDouble(result.getString("Duration"));
+                    int resultWeight = 0; // placeholder for weight
+                    Exercise newEntry = new Exercise(resultName, resultDuration, resultWeight);
                     exercises.add(newEntry);
                 }
             }
