@@ -2,18 +2,18 @@
 * databaseHandler
 * handles connection to database
 * 11/14/2026
-* Authors: Elsius
+* Authors: Elsius, kcompsci9
 * Last update: 11/15/2026
 * Establishes a connection to given URL/USER/PASSWORD
 */
-package databaseHandler;
+package databasehandler;
 
 import java.sql.*;
 import java.util.*;
 
 public class databaseHandler {
     // user and pw are hardcoded here,
-    // communication to db should be part of a backend service to seperate from
+    // communication to db should be part of a backend service to separate from
     // frontend
     // path to database here, use a URL for a remote database
     private static final String URL = "jdbc:sqlite:/pathto/app.db";
@@ -21,6 +21,10 @@ public class databaseHandler {
     private static final String PASSWORD = "";
 
     // attempts to connect to database
+	/**
+	 * @return A java.sql.Connection. 
+	 * @throws java.sql.SQLException A Java SQL exception object.
+	 */
     public static Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
