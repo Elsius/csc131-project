@@ -1,9 +1,13 @@
+/*
+ * NewUser
+ * This is the window that allows adding new users to the application.
+ * 11/15/2026
+ * Authors: kcompsci9, TyDiCicco
+ */
 package ui;
 
-import javax.swing.*;
 import java.awt.*;
-
-
+import javax.swing.*;
 
 public class NewUser {
     public NewUser(){
@@ -11,7 +15,7 @@ public class NewUser {
         JLabel userlabel = new JLabel("Create Username:");
         JLabel passlabel = new JLabel("Create Password:");
         JTextField usertext = new JTextField(15);
-        JTextField passtext = new JTextField(15);
+        JPasswordField passtext = new JPasswordField(15);
         JButton button = new JButton("Create New User");
         JPanel panel = new JPanel(new GridLayout(3, 2, 10, 50));
 
@@ -20,7 +24,6 @@ public class NewUser {
         panel.add(passlabel);
         panel.add(passtext);
         panel.add(button);
-
 
         //Create new user button
         button.addActionListener(e -> {
@@ -33,18 +36,22 @@ public class NewUser {
             //Swap back to Login Window
             frame.dispose();
             new ui.LoginUI();
-
-
         });
 
+        // Frame Settings
+		// Add panel to frame.
+		frame.add(panel); 
 
-        //Frame Settings
-        frame.add(panel); //Add panel to frame
-        frame.setSize(500, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Exit button
-        frame.setLocationRelativeTo(null); //Page pops up center of screen
-        frame.setResizable(false);
-        frame.setVisible(true);
+		frame.setSize(500, 300);
+
+		// Clicking the close button here will exit the entire application.
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// Page pops up in the center of the screen.
+		frame.setLocationRelativeTo(null);
+
+		frame.setResizable(false);
+		frame.setVisible(true);
 
 
     }
