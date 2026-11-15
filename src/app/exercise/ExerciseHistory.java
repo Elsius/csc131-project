@@ -8,7 +8,7 @@
 
 package exercise;
 
-import databaseHandler.databaseHandler;
+import databasehandler.databaseHandler;
 import java.sql.*;
 import java.util.*;
 
