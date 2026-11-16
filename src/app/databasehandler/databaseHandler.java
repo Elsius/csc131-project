@@ -2,7 +2,7 @@
 * databaseHandler
 * handles connection to database
 * 11/14/2026
-* Authors: Elsius, kcompsci9
+* Authors: Elsius, kcompsci9, TyDiCicco
 * Last update: 11/15/2026
 * Establishes a connection to given URL/USER/PASSWORD
 */
