@@ -7,6 +7,12 @@
  */
 package exercise;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import databasehandler.databaseHandler;
+
 public class Exercise {
     private String exerciseName;
     private int reps;
@@ -56,5 +62,26 @@ public class Exercise {
     }
     public int getDate(){
         return this.date;
+    }
+
+    // saves instance of Exercise to Exercise table in database.
+    public void saveToDatabase(){
+        System.out.println("Attempting to save to database");
+        String query = "INSERT INTO Exercise (name, duration, weight, date, ExerciseListID) VALUES (?, ?, ?, ?, ?)";
+
+        try (
+            Connection dbConnection = databaseHandler.connect();
+            PreparedStatement statement = dbConnection.prepareStatement(query);
+        ){
+            statement.setString(1, this.exerciseName);
+            statement.setDouble(2, this.duration);
+            statement.setInt(3, this.userWeight);
+            statement.setInt(4, this.date);
+            statement.setInt(5, 0);
+            statement.executeUpdate();
+
+        }catch(SQLException e){
+            System.out.println("Failed to save to database");
+        }
     }
 }
