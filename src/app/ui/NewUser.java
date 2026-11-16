@@ -1,7 +1,7 @@
 /*
  * NewUser
  * This is the window that allows adding new users to the application.
- * 11/15/2026
+ * Last updated: 11/15/2026
  * Authors: kcompsci9, TyDiCicco
  */
 package ui;
@@ -15,7 +15,7 @@ public class NewUser {
         JLabel userlabel = new JLabel("Create Username:");
         JLabel passlabel = new JLabel("Create Password:");
         JTextField usertext = new JTextField(15);
-        JPasswordField passtext = new JPasswordField(15);
+        JPasswordField passwordField = new JPasswordField(15);
         JButton button = new JButton("Create New User");
         JPanel panel = new JPanel(new GridLayout(3, 2, 10, 50));
 
@@ -28,7 +28,7 @@ public class NewUser {
         //Create new user button
         button.addActionListener(e -> {
             String username = usertext.getText();
-            String password = passtext.getText();
+			char[] password = passwordField.getPassword();
 
             // Create User info from Input
             user.User newUser = new user.User(username, password);
