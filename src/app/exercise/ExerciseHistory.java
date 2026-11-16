@@ -25,10 +25,12 @@ public class ExerciseHistory {
     public void sortByName() {
         // sorts exercise list by name of each item
     }
-
+    public List<Exercise> getHistory(){
+        return exercises;
+    }
     // pull info from backend to populate Exercise list
     // maybe determine ExerciseListID from year/month/user id?
-    public void getHistory(int ExerciseListID) {
+    public void updateHistory(int ExerciseListID) {
 
         // attempt to connect to db and prepare sql
         String query = "SELECT * FROM Exercise WHERE ExerciseListID = ? AND year = ? AND month = ?";
