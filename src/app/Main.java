@@ -12,7 +12,7 @@ public class Main {
         // load ui here
         new LoginUI();
         
-        System.out.println("Hello, World!");
+        
         
     }
 }
