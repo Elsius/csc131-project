@@ -16,7 +16,7 @@ public class databaseHandler {
     // communication to db should be part of a backend service to separate from
     // frontend
     // path to database here, use a URL for a remote database
-    private static final String URL = "jdbc:sqlite:/pathto/app.db";
+    private static final String URL = "jdbc:sqlite:app.db";
     private static final String USER = "";
     private static final String PASSWORD = "";
 
