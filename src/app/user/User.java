@@ -8,13 +8,13 @@ package user;
 
 public class User {
     private String username;
-    private char[] password;
+    private String password;
 
 	/**
 	 * @param username The username of the user.
 	 * @param password The password of the user.
 	 */
-	public User(String username, char[] password){
+	public User(String username, String password){
 		this.username = username;
 		this.password = password;
 	}

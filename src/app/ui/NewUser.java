@@ -8,6 +8,7 @@ package ui;
 
 import java.awt.*;
 import javax.swing.*;
+import databasehandler.databaseHandler;
 
 public class NewUser {
     public NewUser(){
@@ -28,7 +29,7 @@ public class NewUser {
         //Create new user button
         button.addActionListener(e -> {
             String username = usertext.getText();
-			char[] password = passwordField.getPassword();
+			String password = String.valueOf(passwordField.getPassword());
 
             // Create User info from Input
             user.User newUser = new user.User(username, password);
