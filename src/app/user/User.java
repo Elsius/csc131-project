@@ -1,13 +1,23 @@
+/*
+ * User
+ * A class for a user of the application.
+ * Last updated: 11/15/2026
+ * Authors: Elsius, kcompsci9
+ */
 package user;
 
 public class User {
-    private String Username;
-    private String Password;
-    
-    public User(String username, String password){
-        this.Username = username;
-        this.Password = password;
-    }
+    private String username;
+    private char[] password;
+
+	/**
+	 * @param username The username of the user.
+	 * @param password The password of the user.
+	 */
+	public User(String username, char[] password){
+		this.username = username;
+		this.password = password;
+	}
     
     // send username and password to authentication
     public void login(){
