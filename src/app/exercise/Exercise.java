@@ -12,7 +12,7 @@ public class Exercise {
     private int reps;
     private double duration;
     private int userWeight;
-    // date attribute here
+    private int date; // YYYYMMDD format.
     
     // constructor, getter, setter
 	public Exercise(String name, double duration, int userWeight) {
@@ -20,7 +20,13 @@ public class Exercise {
 		this.setExerciseName(name);
 		this.setUserWeight(userWeight);
 	}
-
+    // constructor with date included
+    public Exercise(String name, double duration, int userWeight,int date) {
+		this.setDuration(duration);
+		this.setExerciseName(name);
+		this.setUserWeight(userWeight);
+        this.setDate(date);
+	}
     public void setExerciseName(String name) {
         this.exerciseName = name;
     }
@@ -33,7 +39,9 @@ public class Exercise {
     public void setUserWeight(int weight) {
         this.userWeight = weight;
     }
-    
+    public void setDate(int date){
+        this.date = date;
+    }
     public String getExerciseName() {
         return this.exerciseName;
     }
@@ -45,5 +53,8 @@ public class Exercise {
     }
     public int getUserWeight() {
         return this.userWeight;
+    }
+    public int getDate(){
+        return this.date;
     }
 }
