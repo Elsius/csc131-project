@@ -19,6 +19,7 @@ public class ExerciseHistory {
 
     public void sortByDate() {
         // sorts the exercise date of each item
+        exercises.sort((a,b) -> Integer.compare(a.getDate(),b.getDate()));
     }
 
     public void sortByName() {
@@ -47,9 +48,10 @@ public class ExerciseHistory {
                 // list
                 while (result.next()) {
                     String resultName = result.getString("Name");
-                    double resultDuration = Double.parseDouble(result.getString("Duration"));
+                    double resultDuration = result.getDouble("Duration");
                     int resultWeight = 0; // placeholder for weight
-                    Exercise newEntry = new Exercise(resultName, resultDuration, resultWeight);
+                    int resultDate = result.getInt("Date");
+                    Exercise newEntry = new Exercise(resultName, resultDuration, resultWeight, resultDate);
                     exercises.add(newEntry);
                 }
             }
