@@ -22,7 +22,7 @@ public class NewUser {
         panel.add(userlabel);
         panel.add(usertext);
         panel.add(passlabel);
-        panel.add(passtext);
+        panel.add(passwordField);
         panel.add(button);
 
         //Create new user button
