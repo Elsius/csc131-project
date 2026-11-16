@@ -28,4 +28,31 @@ public class databaseHandler {
     public static Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
+
+	    // Receives strings for username and password from NewUserClass
+    public static void addUser(String username, String password) {
+
+        //Inserts new row into the SQL users table
+        String query = "INSERT INTO users (Username, Password) VALUES (?, ?)";
+
+
+        //Connects to database
+        try (
+                Connection dbConnection = connect();
+                PreparedStatement placeholder =
+                        dbConnection.prepareStatement(query)
+        ) {
+
+            //Sets up table with specific data
+            placeholder.setString(1, username);
+            placeholder.setString(2, password);
+
+            placeholder.executeUpdate();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
