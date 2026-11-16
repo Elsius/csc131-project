@@ -33,6 +33,11 @@ public class NewUser {
             // Create User info from Input
             user.User newUser = new user.User(username, password);
 
+
+			//Send to Database
+                databaseHandler.addUser(username, password);
+
+			
             //Swap back to Login Window
             frame.dispose();
             new ui.LoginUI();
