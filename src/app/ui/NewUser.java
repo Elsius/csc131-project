@@ -1,7 +1,7 @@
 /*
  * NewUser
  * This is the window that allows adding new users to the application.
- * Last updated: 11/15/2026
+ * Last updated: 11/26/2026
  * Authors: kcompsci9, TyDiCicco
  */
 package ui;
@@ -35,9 +35,12 @@ public class NewUser {
             user.User newUser = new user.User(username, password);
 
 
-			//Send to Database
-                databaseHandler.addUser(username, password);
-
+			// Send to Database
+			boolean addingUserSuccess = databaseHandler.addUser(username, password);
+			if (!addingUserSuccess) {
+				JOptionPane.showMessageDialog(frame, "Failed to add the new user.",
+											  "Error", JOptionPane.ERROR_MESSAGE);
+			}
 			
             //Swap back to Login Window
             frame.dispose();
