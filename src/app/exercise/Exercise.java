@@ -3,7 +3,7 @@
  *
  * 2026-11-05
  *
- * Authors: Elsius, kcompsci9
+ * Authors: Elsius, kcompsci9, xalisha
  */
 package exercise;
 
@@ -65,23 +65,25 @@ public class Exercise {
     }
 
     // saves instance of Exercise to Exercise table in database.
-    public void saveToDatabase(){
+    public void saveToDatabase(String username){
         System.out.println("Attempting to save to database");
-        String query = "INSERT INTO Exercise (name, duration, weight, date, ExerciseListID) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Exercise (Username, name, reps, duration, weight, date) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (
             Connection dbConnection = databaseHandler.connect();
             PreparedStatement statement = dbConnection.prepareStatement(query);
         ){
-            statement.setString(1, this.exerciseName);
-            statement.setDouble(2, this.duration);
-            statement.setInt(3, this.userWeight);
-            statement.setInt(4, this.date);
-            statement.setInt(5, 0);
+            statement.setString(1, username);
+			statement.setString(2, this.exerciseName);
+			statement.setInt(3, this.reps);
+            statement.setDouble(4, this.duration);
+            statement.setInt(5, this.userWeight);
+            statement.setInt(6, this.date);
             statement.executeUpdate();
 
         }catch(SQLException e){
             System.out.println("Failed to save to database");
+			e.printStackTrace();
         }
     }
 }
