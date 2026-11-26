@@ -30,6 +30,7 @@ public class LoginUI{
       button.addActionListener(e -> {
         String username = usertext.getText().trim();
         String password = String.valueOf(passtext.getPassword());
+		  
 		  	//check if login info is correct
             if (!databaseHandler.userExists(username)) {
                 JOptionPane.showMessageDialog(frame, "Username error: that username does not exist.",
@@ -39,7 +40,8 @@ public class LoginUI{
                         "Error", JOptionPane.ERROR_MESSAGE);
             } else {
 		  		frame.dispose();
-         		new DashboardUI();
+         		new DashboardUI(username);
+			}
       });
 
       //Create New User Function
