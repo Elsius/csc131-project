@@ -53,7 +53,6 @@ public class ExerciseHistory {
                     int resultDate = result.getInt("Date");
                     Exercise newEntry = new Exercise(resultName, resultDuration, resultWeight, resultDate);
                     newEntry.setReps(result.getInt("Reps"));
-                    newEntry.setId(result.getInt("ID"));
                     exercises.add(newEntry);
                 }
             }
