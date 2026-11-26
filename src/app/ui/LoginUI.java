@@ -2,7 +2,7 @@
  * LoginUI
  * This is the first window that appears when the user runs the application.
  * The user authenticates here to access the rest of the application.
- * 11/15/2026
+ * 11/26/2026
  * Authors: kcompsci9, TyDiCicco, xalisha
  */
 package ui;
@@ -11,6 +11,7 @@ import java.awt.*;
 import javax.swing.*;
 import ui.DashboardUI;
 import ui.NewUser;
+import databasehandler.databaseHandler;
 
 public class LoginUI{
    public LoginUI(){
@@ -27,8 +28,18 @@ public class LoginUI{
 
       //Log in Button Function
       button.addActionListener(e -> {
-         frame.dispose();
-         new DashboardUI();
+        String username = usertext.getText().trim();
+        String password = String.valueOf(passtext.getPassword());
+		  	//check if login info is correct
+            if (!databaseHandler.userExists(username)) {
+                JOptionPane.showMessageDialog(frame, "Username error: that username does not exist.",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (!databaseHandler.checkPassword(username, password)) {
+                JOptionPane.showMessageDialog(frame, "Password error: incorrect password.",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+		  		frame.dispose();
+         		new DashboardUI();
       });
 
       //Create New User Function
