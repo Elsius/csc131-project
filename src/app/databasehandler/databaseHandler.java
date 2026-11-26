@@ -1,7 +1,7 @@
 /*
 * databaseHandler
 * handles connection to database
-* 11/14/2026
+* Last updated: 11/26/2026
 * Authors: Elsius, kcompsci9, TyDiCicco, xalisha
 * Update 11/15/2026: Establishes a connection to given URL/USER/PASSWORD
 * Update 11/26/2026: Creates tables, checks login, saves and reads patient info
@@ -93,8 +93,11 @@ public class databaseHandler {
             return false;
         }
     }
-	    // Receives strings for username and password from NewUserClass
-    public static void addUser(String username, String password) {
+	/**
+	 * Receives strings for username and password from NewUser.
+	 * @return true if the user was added or false if there was an exception.
+	 */
+    public static boolean addUser(String username, String password) {
 
         //Inserts new row into the SQL users table
         String query = "INSERT INTO users (Username, Password) VALUES (?, ?)";
@@ -110,8 +113,10 @@ public class databaseHandler {
             placeholder.setString(2, password);
 
             placeholder.executeUpdate();
+			return true;
         } catch (SQLException e) {
             e.printStackTrace();
+			return false;
         }
     }
 
