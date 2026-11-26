@@ -1,26 +1,27 @@
 /*
  * DashboardUI
  *
- * 2026-11-05
+ * Last updated: 11/26/2026
  *
  * Authors: kcompsci9, xalisha
  */
 package ui;
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 import ui.ViewHealthDataUI;
 
 public class DashboardUI{
-   public DashboardUI(){
-
-      //Creating Objects
+   public DashboardUI(String username){
+      // Creating objects
       JFrame frame = new JFrame("Health Data Dashboard");
       JLabel welcomelabel = new JLabel("Welcome to your personal health data dashboard!");
       JButton addRecordButton = new JButton("Add Health Record");
       JButton viewRecordButton = new JButton("View Health Record");
       JButton profileButton = new JButton("Profile");
       JButton logoutButton = new JButton("Logout");
+	   JLabel usernameLabel = new JLabel(username);
+	   usernameLabel.setAlignmentX(Component.RIGHT_ALIGNMENT);
       JPanel panel = new JPanel();
 
 		// The logout button will exit the application.
@@ -36,6 +37,7 @@ public class DashboardUI{
 
       //Panel Settings
       panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+	   panel.add(usernameLabel);
       panel.add(welcomelabel);
       panel.add(addRecordButton);
       panel.add(viewRecordButton);
