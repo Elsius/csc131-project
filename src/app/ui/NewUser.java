@@ -53,6 +53,7 @@ public class NewUser {
 			}
 			
             //Swap back to Login Window
+			JOptionPane.showMessageDialog(frame, "User created! Please log in.");
             frame.dispose();
             new ui.LoginUI();
         });
