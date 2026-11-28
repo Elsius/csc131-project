@@ -2,7 +2,7 @@
  * NewUser
  * This is the window that allows adding new users to the application.
  * Last updated: 11/26/2026
- * Authors: kcompsci9, TyDiCicco
+ * Authors: kcompsci9, TyDiCicco, xalisha
  */
 package ui;
 
@@ -28,18 +28,28 @@ public class NewUser {
 
         //Create new user button
         button.addActionListener(e -> {
-            String username = usertext.getText();
+            String username = usertext.getText().trim();
 			String password = String.valueOf(passwordField.getPassword());
+
+			//Checks the input
+			if (username.isEmpty() || password.isEmpty()) {
+                JOptionPane.showMessageDialog(frame, "Please enter a username and password.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (databaseHandler.userExists(username)) {
+                JOptionPane.showMessageDialog(frame, "That username is already taken.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
             // Create User info from Input
             user.User newUser = new user.User(username, password);
-
 
 			// Send to Database
 			boolean addingUserSuccess = databaseHandler.addUser(username, password);
 			if (!addingUserSuccess) {
 				JOptionPane.showMessageDialog(frame, "Failed to add the new user.",
 											  "Error", JOptionPane.ERROR_MESSAGE);
+				return;
 			}
 			
             //Swap back to Login Window
@@ -61,10 +71,5 @@ public class NewUser {
 
 		frame.setResizable(false);
 		frame.setVisible(true);
-
-
     }
-
-
-
 }
