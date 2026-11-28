@@ -1,7 +1,7 @@
 /*
  * NewUser
  * This is the window that allows adding new users to the application.
- * Last updated: 11/26/2026
+ * Last updated: 11/27/2026
  * Authors: kcompsci9, TyDiCicco, xalisha
  */
 package ui;
@@ -18,6 +18,7 @@ public class NewUser {
         JTextField usertext = new JTextField(15);
         JPasswordField passwordField = new JPasswordField(15);
         JButton button = new JButton("Create New User");
+		JButton backButton = new JButton("Back");
         JPanel panel = new JPanel(new GridLayout(3, 2, 10, 50));
 
         panel.add(userlabel);
@@ -25,6 +26,13 @@ public class NewUser {
         panel.add(passlabel);
         panel.add(passwordField);
         panel.add(button);
+		panel.add(backButton);
+
+		//Back button brings you back to login page
+		backButton.addActionListener(e -> {
+    	frame.dispose();
+    	new ui.LoginUI();
+		});
 
         //Create new user button
         button.addActionListener(e -> {
